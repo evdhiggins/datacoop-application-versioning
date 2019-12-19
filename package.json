@@ -2,7 +2,10 @@
     "name": "datacoop-application-versioning",
     "version": "0.1.0",
     "description": "A small library used for DC:N script & application version tracking",
-    "main": "built/main.js",
+    "main": "built/index.js",
+    "bin": {
+        "dcver": "./bin/dcver"
+    },
     "scripts": {
         "build": "npm run lint && tsc -p .",
         "lint": "tsc --noEmit && eslint '*/**/*.ts' --quiet --fix",

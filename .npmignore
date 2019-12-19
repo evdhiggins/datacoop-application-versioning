@@ -1,0 +1,7 @@
+src
+tests
+.eslintrc.js
+.prettierrc.js
+tsconfig.json
+*.env
+!built

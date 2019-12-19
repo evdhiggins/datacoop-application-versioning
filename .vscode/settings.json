@@ -20,6 +20,8 @@
   },
   "cSpell.words": [
     "datacoop",
+    "dcver",
+    "dcversion",
     "phin"
   ],
   "typescript.tsdk": "node_modules/typescript/lib",
