@@ -18,23 +18,27 @@ interface RegisterApplicationReqBody {
 }
 
 function makeApiRequest(
-    url: ApiEndpoints.CheckVersion,
+    apiUrl: string,
+    endpoint: ApiEndpoints.CheckVersion,
     data: CheckVersionReqBody,
 ): Promise<CheckVersionResponse>
 function makeApiRequest(
-    url: ApiEndpoints.IncrementVersion,
+    apiUrl: string,
+    endpoint: ApiEndpoints.IncrementVersion,
     data: IncrementVersionReqBody,
 ): Promise<ApplicationVersion>
 function makeApiRequest(
-    url: ApiEndpoints.RegisterApplication,
+    apiUrl: string,
+    endpoint: ApiEndpoints.RegisterApplication,
     data: RegisterApplicationReqBody,
 ): Promise<Application>
 function makeApiRequest(
-    url: ApiEndpoints,
+    apiUrl: string,
+    endpoint: ApiEndpoints,
     data: CheckVersionReqBody | IncrementVersionReqBody | RegisterApplicationReqBody,
 ): Promise<CheckVersionResponse | ApplicationVersion | Application> {
     return phin({
-        url: `http://localhost:3050/${url}`,
+        url: `${apiUrl}/${endpoint}`,
         data,
         parse: 'json',
     }) as any
