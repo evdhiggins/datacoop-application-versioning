@@ -4,6 +4,12 @@ export enum ApiEndpoints {
     CheckVersion = '/application-version/check',
 }
 
+export interface Config {
+    apiUrl: string
+    applicationId: string
+    version: string
+}
+
 export interface Application {
     id: string
     name: string
@@ -18,6 +24,8 @@ export interface ApplicationVersion {
     version: string
     applicationId: string
     createdAt: string
+    isRequired: boolean
+    notes: string
 }
 
 export interface CheckVersionResponse {
