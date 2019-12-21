@@ -1,7 +1,7 @@
 export enum ApiEndpoints {
-    RegisterApplication = '/application/register',
-    IncrementVersion = '/application-version',
-    CheckVersion = '/application-version/check',
+    RegisterApplication = 'application/register',
+    IncrementVersion = 'application-version',
+    CheckVersion = 'application-version/check',
 }
 
 export interface Config {
