@@ -1,6 +1,6 @@
 {
-    "name": "datacoop-application-versioning",
-    "version": "0.1.0",
+    "name": "@evdhiggins/datacoop-application-versioning",
+    "version": "0.1.3",
     "description": "A small library used for DC:N script & application version tracking",
     "main": "built/index.js",
     "bin": {
