@@ -32,16 +32,21 @@ function makeApiRequest(
     endpoint: ApiEndpoints.RegisterApplication,
     data: RegisterApplicationReqBody,
 ): Promise<Application>
-function makeApiRequest(
+async function makeApiRequest(
     apiUrl: string,
     endpoint: ApiEndpoints,
     data: CheckVersionReqBody | IncrementVersionReqBody | RegisterApplicationReqBody,
 ): Promise<CheckVersionResponse | ApplicationVersion | Application> {
-    return phin({
+    const result = await phin({
         url: `${apiUrl}/${endpoint}`,
         data,
+        method: 'POST',
         parse: 'json',
-    }) as any
+    })
+    if (!result.statusCode || result.statusCode > 400) {
+        throw new Error('Failed request')
+    }
+    return result.body as any
 }
 
 export default makeApiRequest
